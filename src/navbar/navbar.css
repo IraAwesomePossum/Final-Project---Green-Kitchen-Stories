@@ -8,6 +8,7 @@
   align-items: center;
   color: #472b22;
   font-family: "Josefin Slab", sans-serif;
+  z-index: 500;
 }
 .topLeft,
 .topRight {
