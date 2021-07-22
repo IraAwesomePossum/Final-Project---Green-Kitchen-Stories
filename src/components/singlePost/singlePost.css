@@ -1,5 +1,7 @@
 .singlePost {
   flex: 9;
+  max-width: 70%;
+  margin-right: 80px;
 }
 .singlePostWrapper {
   padding: 20px;
@@ -33,4 +35,29 @@
 }
 .singlePostIcon:last-child {
   color: #ffaaa5;
+}
+
+.singlePostInfo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #698474;
+  font-family: "Varela", sans-serif;
+}
+
+.singlePostDescription {
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: left;
+  padding: 5px;
+}
+.par {
+  padding-bottom: 15px;
+}
+
+.par::first-letter {
+  margin-left: 5px;
+  font-size: 30px;
+  font-weight: 600;
 }
