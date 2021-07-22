@@ -9,9 +9,9 @@ export default function Header() {
       </div>
       {/* <img
         className="headerImage"
-        src="https://images.pexels.com/photos/5946083/pexels-photo-5946083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        alt="cooking"
-      /> */}
+        src="https://i.ibb.co/KmPNkWm/pexels-ella-olsson-1640773-adobespark.png"
+        alt="cooking" */}
+      {/* /> */}
     </div>
   );
 }

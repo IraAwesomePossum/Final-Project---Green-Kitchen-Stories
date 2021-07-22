@@ -28,15 +28,27 @@
 .sidebarList {
   list-style: none;
   padding-inline-start: 0;
+  margin: 20px;
+}
+.sidebarListItem {
+  padding: 1px;
+  cursor: pointer;
+}
+.sidebarIcon {
+  margin-top: 10px;
+  padding: 5px;
+  color: #472b22;
+  font-size: 20px;
 }
 
 body {
   text-align: center;
-  padding: 30px;
+  /* padding: 30px; */
   background: white;
 }
 
 .a-box {
+  margin-top: 150px;
   display: inline-block;
   width: 240px;
   text-align: center;
