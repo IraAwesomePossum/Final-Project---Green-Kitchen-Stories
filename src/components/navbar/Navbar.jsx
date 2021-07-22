@@ -14,7 +14,7 @@ export default function Navbar() {
           <li className="topListItem">HOME</li>
           <li className="topListItem">ABOUT</li>
           <li className="topListItem">CONTACTS</li>
-          <li className="topListItem">CREATE POST</li>
+          <li className="topListItem">CREATE A POST</li>
           <li className="topListItem">LOGOUT</li>
         </ul>
       </div>
