@@ -4,4 +4,80 @@
 
 .settingsWrapper{
   flex: 9;
+  padding:20px;
+}
+.settingsTitle{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.settingsUpdateTitle{
+  font-size: 30px;
+  margin-bottom: 20px;
+  color:#698474;
+}
+
+.settingsDeleteTitle{
+  color:#DA0037;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.settingsForm{
+  display: flex;
+  flex-direction: column;
+
+}
+.settingsImage {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+}
+
+.settingsImage > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.settingsProfileIcon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #FFD3B6;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin-left: 10px;
+  border: 1px solid #FFAAA5;
+  cursor: pointer;
+}
+
+
+.settingsForm > label {
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: left;
+}
+.settingsForm > input {
+  color: grey;
+  margin: 10px 0;
+  height: 30px;
+  border:none;
+  border-bottom: 0.5px solid #FFD3B6;
+  outline: none;
+}
+
+.settingsSubmit{
+  width: 150;
+  align-self: left;
+  max-width: 10%;
+  border: none;
+  border-radius: 5px;
+  background-color: #698474;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
