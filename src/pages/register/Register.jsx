@@ -5,7 +5,7 @@ export default function Login() {
     <div className="login">
       <div className="main">
         <p className="sign" align="center">
-          Login
+          Sign up
         </p>
         <form className="form1">
           <input
@@ -21,10 +21,7 @@ export default function Login() {
             placeholder="Password"
           />
           <button className="submit" align="center">
-            Login
-          </button>
-          <button className="submit" align="center">
-            Register
+            Signup
           </button>
         </form>
       </div>
