@@ -60,6 +60,7 @@
   font-size: 20px;
   margin-top: 20px;
   text-align: left;
+  font-family: 'Lora', serif;
 }
 .settingsForm > input {
   color: grey;
@@ -68,6 +69,7 @@
   border:none;
   border-bottom: 0.5px solid #FFD3B6;
   outline: none;
+  font-family: 'Varela', sans-serif;
 }
 
 .settingsSubmit{
