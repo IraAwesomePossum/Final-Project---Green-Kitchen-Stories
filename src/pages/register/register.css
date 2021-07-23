@@ -96,3 +96,8 @@ form.form1 {
   max-width: 30%;
   font-family: "Lora", serif;
 }
+.link {
+  color: #fff;
+  text-decoration: none;
+  min-width: 150px;
+}

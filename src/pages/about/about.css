@@ -1,0 +1,22 @@
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.aboutImage {
+  max-height: 700px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border: 20px solid #ffaaa5;
+}
+.aboutText {
+  max-width: 50;
+  text-align: center;
+  color: #472b22;
+}
+h1 {
+  margin-bottom: 20px;
+  color: #698474;
+}
