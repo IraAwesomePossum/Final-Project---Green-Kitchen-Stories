@@ -1,0 +1,22 @@
+.footer {
+  height: 5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fcf8f3;
+  text-align: center;
+  margin-top: auto;
+}
+span {
+  color: #698474;
+}
+h5 {
+  color: var(--clr-white);
+  margin: 0.1rem;
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.25;
+  padding-top: 30px;
+  font-size: 15px;
+}
