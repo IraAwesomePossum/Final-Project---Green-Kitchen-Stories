@@ -5,7 +5,7 @@ router.post("/", async (req, res) => {
   const newCat = new Category(req.body);
   try {
     const savedCat = await newCat.save();
-    res.send(200).json(savedCat);
+    res.status(200).json(savedCat);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const cats = await Category.find();
-    res.send(200).json(cats);
+    res.status(200).json(cats);
   } catch (err) {
     res.status(500).json(err);
   }
