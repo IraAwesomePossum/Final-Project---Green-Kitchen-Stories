@@ -96,6 +96,10 @@ form.form1 {
   font-family: "Lora", serif;
 }
 
+.submit:disabled {
+  cursor: not-allowed;
+}
+
 .link {
   color: #fff;
   text-decoration: none;
