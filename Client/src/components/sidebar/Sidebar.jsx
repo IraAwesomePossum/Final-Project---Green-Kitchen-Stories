@@ -20,18 +20,20 @@ export default function Sidebar() {
         <div className="img-inner">
           <div className="inner-skew">
             <img
-              src="https://images.unsplash.com/photo-1520998116484-6eeb2f72b5b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+              src="https://images.pexels.com/photos/5945640/pexels-photo-5945640.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
               alt="face"
             />
           </div>
         </div>
       </div>
       <div className="text-container">
-        <h3>ABOUT ME</h3>
+        <h3>ABOUT THIS BLOG</h3>
         <div>
           <p>
-            Incurable food nerd. Travel fan. Zombie fanatic. Twitter ninja. Tv
-            advocate. Music enthusiast.
+            A decade ago, we set out to bring cooks together from all over to
+            exchange recipes and to support each other in the kitchen. We wanted
+            to create a buzzing place for others who do what we do all day long:
+            talk about food!
           </p>
         </div>
 
@@ -50,7 +52,7 @@ export default function Sidebar() {
         </div>
 
         <div className="sidebarItem">
-          <span className="sidebarTitle">FOLLOW ME</span>
+          <span className="sidebarTitle">FOLLOW US</span>
           <div className="sidebarSocial">
             <i className="sidebarIcon fab fa-instagram-square"></i>
             <i className="sidebarIcon fab fa-facebook-f"></i>

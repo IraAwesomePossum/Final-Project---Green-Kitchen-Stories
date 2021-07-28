@@ -5,6 +5,7 @@ import { Context } from "../../context/Context";
 
 export default function Navbar() {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -46,7 +47,7 @@ export default function Navbar() {
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-            <img className="topImage" src={user.profilePic} alt="woman" />
+            <img className="topImage" src={PF + user.profilePic} alt="woman" />
           </Link>
         ) : (
           <ul className="topList">
