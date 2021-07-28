@@ -3,12 +3,12 @@ const PostSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      // required: true,
       unique: true,
     },
     description: {
       type: String,
-      required: true,
+      // required: true,
     },
     photo: {
       type: String,
