@@ -11,14 +11,41 @@ export default function SinglePost() {
   const [post, setPost] = useState({});
   const PF = "http://localhost:5000/images/";
   const { user } = useContext(Context);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [updateMode, setUpdateMode] = useState(false);
 
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get("/posts/" + path);
       setPost(res.data);
+      setTitle(res.data.title);
+      setDescription(res.data.description);
     };
     getPost();
   }, [path]);
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete("/posts/" + path, {
+        data: { username: user.username },
+      });
+      window.location.replace(`/`);
+    } catch (err) {}
+  };
+
+  const handleUpdate = async () => {
+    try {
+      await axios.put("/posts/" + path, {
+        username: user.username,
+        title,
+        description,
+      });
+      // window.location.reload();
+      setUpdateMode(false);
+    } catch (err) {}
+  };
+
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
@@ -29,16 +56,31 @@ export default function SinglePost() {
             alt="food image"
           />
         )}
+        {updateMode ? (
+          <input
+            type="text"
+            value={title}
+            className="singlePostTitleInput"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        ) : (
+          <h1 className="singlePostTitle">
+            {title}
+            {post.username === user?.username && (
+              <div className="singlePostEdit">
+                <i
+                  className="singlePostIcon far fa-edit"
+                  onClick={() => setUpdateMode(true)}
+                ></i>
+                <i
+                  className="singlePostIcon far fa-trash-alt"
+                  onClick={handleDelete}
+                ></i>
+              </div>
+            )}
+          </h1>
+        )}
 
-        <h1 className="singlePostTitle">
-          {post.title}
-          {post.username === user?.username && (
-            <div className="singlePostEdit">
-              <i className="singlePostIcon far fa-edit"></i>
-              <i className="singlePostIcon far fa-trash-alt"></i>
-            </div>
-          )}
-        </h1>
         <div className="singlePostInfo">
           <span className="sinlePostAuthor">
             Author:
@@ -53,11 +95,23 @@ export default function SinglePost() {
             {new Date(post.createdAt).toDateString()}
           </span>
         </div>
-
-        <div className="singlePostDescription ">
-          <p className="par">{post.description}</p>
-        </div>
+        {updateMode ? (
+          <textarea
+            className="singlePostDescriptionInput"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        ) : (
+          <div className="singlePostDescription ">
+            <p className="par">{description}</p>
+          </div>
+        )}
       </div>
+      {updateMode && (
+        <button className="singlePostButton" onClick={handleUpdate}>
+          UPDATE
+        </button>
+      )}
     </div>
   );
 }

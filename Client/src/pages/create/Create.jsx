@@ -5,7 +5,7 @@ import { Context } from "../../context/Context";
 
 export default function Create() {
   const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+  const [description, setDescription] = useState("");
   const [file, setFile] = useState(null);
   const { user } = useContext(Context);
 
@@ -14,7 +14,7 @@ export default function Create() {
     const newPost = {
       username: user.username,
       title,
-      desc,
+      description,
     };
     console.log(newPost);
     if (file) {
@@ -68,7 +68,7 @@ export default function Create() {
             placeholder="Tell us something good"
             type="text"
             className="writeInput writeText"
-            onChange={(e) => setDesc(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
         <button className="writeSubmit" type="submit">
