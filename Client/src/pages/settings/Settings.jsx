@@ -1,35 +1,90 @@
 import "./settings.css";
-import Sidebar from "../../components/sidebar/Sidebar"
+import Sidebar from "../../components/sidebar/Sidebar";
+import { useContext, useState } from "react";
+import { Context } from "../../context/Context";
+import axios from "axios";
 
 export default function Settings() {
-  return <div className="settings">
-  <div className="settingsWrapper">
-  <div className="settingsTitle">
-  
-  <span className="settingsUpdateTitle">Update Account
-  </span>
-  <span className="settingsDeleteTitle">Delete Account
-  </span>
-  </div>
-  <form className="settingsForm">  
-  <label>Profile Image</label>
-  <div className="settingsImage">
-   <img src="https://images.unsplash.com/photo-1520998116484-6eeb2f72b5b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-              alt="face"/>
-              <label htmlFor="fileInput">
+  const [file, setFile] = useState(null);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState("");
+  const { user } = useContext(Context);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const updatedUser = {
+      userId: user._id,
+      username,
+      email,
+      password,
+    };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+      updatedUser.profilePic = filename;
+      try {
+        await axios.post("/upload", data);
+      } catch (err) {}
+    }
+    try {
+      await axios.put("/users/" + user._id, updatedUser);
+      setSuccess(true);
+    } catch (err) {
+      console.error(err.response.data);
+    }
+  };
+  return (
+    <div className="settings">
+      <div className="settingsWrapper">
+        <div className="settingsTitle">
+          <span className="settingsUpdateTitle">Update Account</span>
+          <span className="settingsDeleteTitle">Delete Account</span>
+        </div>
+        <form className="settingsForm" onSubmit={handleSubmit}>
+          <label>Profile Image</label>
+          <div className="settingsImage">
+            <img
+              src={file ? URL.createObjectURL(file) : user.profilePic}
+              alt="face"
+            />
+            <label htmlFor="fileInput">
               <i className="settingsProfileIcon far fa-user"></i>
-              </label>
-              <input type="file" id="fileInput" style={{display: "none"}}/>
-  </div>
-  <label>Username</label>
-<input type="text" placeholder="Anna"/>
-  <label>Email</label>
-<input type="email" placeholder="anna@gmail.com"/>
-  <label>Password</label>
-<input type="password"/>
-<button className="settingsSubmit">Update</button>
-  </form>
-  </div>
-  <Sidebar/>
-  </div>;
+            </label>
+            <input
+              type="file"
+              id="fileInput"
+              style={{ display: "none" }}
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </div>
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder={user.username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder={user.email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="settingsSubmit" type="submit">
+            Update
+          </button>
+          {success && <p>Your profile was updated</p>}
+        </form>
+      </div>
+      <Sidebar />
+    </div>
+  );
 }
