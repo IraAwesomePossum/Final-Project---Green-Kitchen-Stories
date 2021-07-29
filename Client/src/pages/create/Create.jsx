@@ -75,7 +75,7 @@ export default function Create() {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <button id="submit" className="writeSubmit" type="submit">
+        <button id="submit-1" className="writeSubmit" type="submit">
           Publish
         </button>
       </form>

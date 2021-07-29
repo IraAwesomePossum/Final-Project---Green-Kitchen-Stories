@@ -51,7 +51,7 @@ export default function Login() {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="submit link" align="center" type="submit">
+          <button className="registerBtn link" align="center" type="submit">
             Sign up
           </button>
         </form>

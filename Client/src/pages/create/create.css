@@ -237,7 +237,7 @@ textarea:hover {
   color: #e2dedb;
 }
 
-#submit {
+#submit-1 {
   width: 502px;
 
   padding: 0;
@@ -254,7 +254,7 @@ textarea:hover {
   border-top: none;
 }
 
-#submit:hover {
+#submit-1:hover {
   color: #e2dedb;
 }
 

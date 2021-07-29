@@ -12,10 +12,14 @@ export default function Navbar() {
   return (
     <div className="nav">
       <div className="topLeft">
-        <i className="topIcon fab fa-instagram-square"></i>
+        {/* <i className="topIcon fab fa-instagram-square"></i>
         <i className="topIcon fab fa-facebook-f"></i>
         <i className="topIcon fab fa-twitter"></i>
-        <i className="topIcon fab fa-tiktok"></i>
+        <i className="topIcon fab fa-tiktok"></i> */}
+        <img
+          className="navImg"
+          src="https://i.ibb.co/ZYtJjjM/f7180738edbb44bbb4e0bba673e781ce.png"
+        ></img>
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -29,11 +33,7 @@ export default function Navbar() {
               ABOUT
             </Link>
           </li>
-          <li className="topListItem">
-            <Link to="/" style={{ color: "inherit" }}>
-              CONTACT
-            </Link>
-          </li>
+
           <li className="topListItem">
             <Link to="/create " style={{ color: "inherit" }}>
               CREATE A POST
