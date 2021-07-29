@@ -29,7 +29,7 @@ export default function Sidebar() {
       <div className="text-container">
         <h3>ABOUT THIS BLOG</h3>
         <div>
-          <p>
+          <p className="sidebarPar">
             A decade ago, we set out to bring cooks together from all over to
             exchange recipes and to support each other in the kitchen. We wanted
             to create a buzzing place for others who do what we do all day long:

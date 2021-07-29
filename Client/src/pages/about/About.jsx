@@ -12,8 +12,8 @@ export default function About() {
         <h1> About this blog </h1>
       </div>
       <div className="desc">
-        <h3>MEET SARAH</h3>
-        <p>
+        <h3 className="abouth3">MEET SARAH</h3>
+        <p className="aboutPar">
           Sarah Green lives in Berlin with her cat Voltaire. Sarah is a
           25-year-old medical student who enjoys vandalising bus stops, eating
           out and learning new languages. Sarah's best friend is a medical

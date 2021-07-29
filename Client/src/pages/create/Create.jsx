@@ -45,11 +45,13 @@ export default function Create() {
         />
       )}
 
-      <form className="writeForm" onSubmit={handleSubmit}>
+      <form id="form" className="topBefore writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
-          <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
-          </label>
+          <div className="top">
+            <label id="name" htmlFor="fileInput">
+              <i className="writeIcon fas fa-plus">Add your picture</i>
+            </label>
+          </div>
           <input
             type="file"
             id="fileInput"
@@ -57,6 +59,7 @@ export default function Create() {
             onChange={(e) => setFile(e.target.files[0])}
           />
           <input
+            id="email"
             type="text"
             placeholder="Title"
             className="writeInput"
@@ -65,13 +68,14 @@ export default function Create() {
         </div>
         <div className="writeFormGroup">
           <textarea
+            id="message"
             placeholder="Tell us something good"
             type="text"
             className="writeInput writeText"
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <button className="writeSubmit" type="submit">
+        <button id="submit" className="writeSubmit" type="submit">
           Publish
         </button>
       </form>
