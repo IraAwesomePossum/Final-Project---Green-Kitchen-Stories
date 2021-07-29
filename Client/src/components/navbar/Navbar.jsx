@@ -47,7 +47,7 @@ export default function Navbar() {
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-            <img className="topImage" src={PF + user.profilePic} alt="woman" />
+            <img className="topImage" src={PF + user.profilePic} alt="image" />
           </Link>
         ) : (
           <ul className="topList">

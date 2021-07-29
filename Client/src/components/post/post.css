@@ -1,6 +1,15 @@
+body {
+  background-color: #ddd;
+  margin: 1rem;
+}
+
 .post {
   width: 385px;
   margin: 150px 25px 40px 25px;
+  /* border: 1px solid rgb(124, 123, 123); */
+  border-radius: 7px;
+  box-shadow: rgba(90, 89, 89, 0.25) 0px 14px 28px,
+    rgba(97, 96, 96, 0.22) 0px 10px 10px;
 }
 .postImage {
   width: 100%;
@@ -50,4 +59,23 @@
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+  margin-bottom: 5px;
+}
+
+.postSubmit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #698474, #a7c4bc);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Lora", serif;
+  font-size: 13px;
+  margin: 15px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  max-width: 50%;
+  font-family: "Lora", serif;
 }
